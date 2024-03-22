@@ -12,20 +12,24 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div style="background-color:steelblue" class="container-fluid">
-                <img src="~/Images/logo.png" / style="width:80px;height:80px">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Clinic_management_system_mvc</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <img src="~/Images/logo2.jpg" style="width:250px;height:120px;padding-left:0px">
+                
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item" >
+                            <a class="nav-link text-dark" style="padding-left:850px" asp-area="" asp-controller="patient" asp-action="Index"><p style="color:white">Patient</p></a>
+                        </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" style="padding-left:20px" asp-area="" asp-controller="Doctor" asp-action="Index"><p style="color:white">Doctor</p></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" style="padding-left:20px" asp-area="" asp-controller="Admin" asp-action="Index"><p style="color:white">Admin</p></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" style="padding-left:20px" asp-area="" asp-controller="Contact" asp-action="Index"><p style="color:white">Contact</p></a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

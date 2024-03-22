@@ -20,3 +20,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* CSS styling for the slideshow */
+.slick-carousel {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slick-slide img {
+    width: 100%;
+}
