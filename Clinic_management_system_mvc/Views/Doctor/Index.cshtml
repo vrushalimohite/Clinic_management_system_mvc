@@ -3,4 +3,23 @@
 *@
 @{
 }
-<p>bhfgdc</p>
+@model Doctor
+<p>gbyyhtdt</p>
+
+@using (Html.BeginForm("Register", "Doctor", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Specialty)
+        @Html.TextBoxFor(model => model.Specialty)
+    </div>
+    <!-- Add more fields and styling as needed -->
+    <input type="submit" value="Register" />
+}

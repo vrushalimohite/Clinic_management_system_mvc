@@ -15,23 +15,16 @@
                 <img src="~/Images/logo.jpg" style="width:100px;height:80px;padding-left:2px; padding-top:5px; padding-bottom:5px;">
                 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        
-                        <li class="nav-item" >
-                            <a class="nav-link text-dark" style="padding-left:850px" asp-area="" asp-controller="patient" asp-action="Index"><p style="color:white">Patient</p></a>
-                        </li>
+                    
+                    @{
+                        var myDropDownModel = ViewBag.MyDropDownModel as MyDropDownModel;
+                    }
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" style="padding-left:20px" asp-area="" asp-controller="Doctor" asp-action="Index"><p style="color:white">Doctor</p></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" style="padding-left:20px" asp-area="" asp-controller="Admin" asp-action="Index"><p style="color:white">Admin</p></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" style="padding-left:20px" asp-area="" asp-controller="Contact" asp-action="Index"><p style="color:white">Contact</p></a>
-                        </li>
-                        
-                    </ul>
+                    @if (myDropDownModel != null)
+                    {
+                        @Html.DropDownListFor(model => myDropDownModel.SelectedItemId, myDropDownModel.Items, "-- Select Option --")
+                    }
+
                 </div>
             </div>
         </nav>
