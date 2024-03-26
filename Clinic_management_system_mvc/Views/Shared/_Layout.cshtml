@@ -14,7 +14,42 @@
             <div style="background-color:steelblue" class="container-fluid">
                 <img src="~/Images/logo.jpg" style="width:100px;height:80px;padding-left:2px; padding-top:5px; padding-bottom:5px;">
                 
-               
+               <ul>
+
+                    <li class="nav-item">
+                        <select id="navigationDropdown" style="background-color:steelblue ;color:white">
+                            <option>PATIENT</option>
+                            <option value="PatientRegistration">Patient Registration</option>
+                            <option value="AppointmentBooking">Patient History</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </li>
+                    </ul>
+                    <ul style="padding-left:0px">
+                    <li class="nav-item" ">
+                        <select id="DoctorDropdown" style="background-color:steelblue;color:white">
+                            <option>DOCTOR</option>
+                            <option value="DoctorRegistration">Doctor Registration</option>
+                            <option value="AppointmentBooking">Appointment Booking</option>
+                            <option value="PatientHistory">Patient History</option>
+                            <option value="DoctorTreatment">Doctor Treatment</option>
+
+
+
+                            <!-- Add more options as needed -->
+                        </select>
+                    </li>
+                    </ul>
+                    <li class="nav-item">
+                    <select id="AdminDropdown" style="background-color:steelblue ;color:white">
+                            <option>Admin</option>
+                            <option value="Billing">Billing</option>
+                            <option value="AppointmentBooking">Patient History</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </li>
+
+               </ul>
 
                 </div>
             </div>
@@ -37,3 +72,63 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $('#navigationDropdown').change(function () {
+            var selectedOption = $(this).val();
+            if (selectedOption) {
+                switch (selectedOption) {
+                    case "PatientRegistration":
+                        window.location.href = '/Patient'; // Redirect to Patient Registration page
+                        break;
+                    case "AppointmentBooking":
+                        window.location.href = '/AppointmentBooking'; // Redirect to Appointment Booking page
+                        break;
+                    // Add more cases for additional options
+                    default:
+                        break;
+                }
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#DoctorDropdown').change(function () {
+            var selectedOption = $(this).val();
+            if (selectedOption) {
+                switch (selectedOption) {
+                    case "DoctorRegistration":
+                        window.location.href = '/Doctor'; // Redirect to Patient Registration page
+                        break;
+                    case "AppointmentBooking":
+                        window.location.href = '/AppointmentBooking'; // Redirect to Appointment Booking page
+                        break;
+                    // Add more cases for additional options
+                    default:
+                        break;
+                }
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#AdminDropdown').change(function () {
+            var selectedOption = $(this).val();
+            if (selectedOption) {
+                switch (selectedOption) {
+                    case "DoctorRegistration":
+                        window.location.href = '/Doctor'; // Redirect to Patient Registration page
+                        break;
+                    case "AppointmentBooking":
+                        window.location.href = '/AppointmentBooking'; // Redirect to Appointment Booking page
+                        break;
+                    // Add more cases for additional options
+                    default:
+                        break;
+                }
+            }
+        });
+    });
+</script>
