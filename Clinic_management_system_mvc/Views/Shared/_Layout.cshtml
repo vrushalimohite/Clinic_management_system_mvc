@@ -14,16 +14,7 @@
             <div style="background-color:steelblue" class="container-fluid">
                 <img src="~/Images/logo.jpg" style="width:100px;height:80px;padding-left:2px; padding-top:5px; padding-bottom:5px;">
                 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    
-                    @{
-                        var myDropDownModel = ViewBag.MyDropDownModel as MyDropDownModel;
-                    }
-
-                    @if (myDropDownModel != null)
-                    {
-                        @Html.DropDownListFor(model => myDropDownModel.SelectedItemId, myDropDownModel.Items, "-- Select Option --")
-                    }
+               
 
                 </div>
             </div>
