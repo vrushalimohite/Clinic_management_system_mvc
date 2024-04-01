@@ -5,27 +5,39 @@ namespace Clinic_management_system_mvc.Controllers
 {
     public class PatientController : Controller
     {
-       
-            // GET: Patient
-            public ActionResult Registration()
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        
+    
+        // GET: Patient/Register
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: Patient/Register
+        [HttpPost]
+        public ActionResult Register(Patient patient)
+        {
+            if (ModelState.IsValid)
             {
-                return View();
+                // Save patient data to database or perform other actions
+                // For demonstration, let's just redirect to a success page
+                return RedirectToAction("RegistrationSuccess");
             }
 
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public ActionResult Register(Patient patient)
-            {
-                // Here you might want to save the patient data to a database
-                // For now, let's assume registration is successful
-                return RedirectToAction("RegistrationSuccessful");
-            }
+            return View(patient);
+        }
 
-            public ActionResult RegistrationSuccessful()
-            {
-                return View();
-            }
+        // GET: Patient/RegistrationSuccess
+        public ActionResult RegistrationSuccess()
+        {
+            return View();
         }
     }
 
+}
 
